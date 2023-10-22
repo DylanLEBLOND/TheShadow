@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
 	public Player mainPlayer;
 
+	private LevelOver endGame;
+
 	void Start()
 	{
-
+		endGame = this.transform.GetChild(0).GetComponent<LevelOver>();
 	}
 
 	void Update()
@@ -17,6 +19,11 @@ public class GameManager : MonoBehaviour
 		if (! mainPlayer.isAlive)
 		{
 			Debug.Log ("GAME OVER");
+			SceneManager.LoadScene ("ProtoLevel");
+		}
+		if (endGame.isOver)
+		{
+			Debug.Log ("LEVEL COMPLETED");
 			SceneManager.LoadScene ("ProtoLevel");
 		}
 	}
