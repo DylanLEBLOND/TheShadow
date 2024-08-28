@@ -108,11 +108,15 @@ public class Player : MonoBehaviour
 	public void Dead ()
 	{
 		isAlive = false;
-		this.gameObject.SetActive (false);
+		mySprite.color = new Color (mySprite.color.r, mySprite.color.g, mySprite.color.b, 0.0f);
+		mybody.constraints = RigidbodyConstraints2D.FreezePosition;
 	}
 
 	void Update()
 	{
+		if (! isAlive)		/* nothing to do */
+			return;
+
 		groundCheck ();
 
 		_horizontalMovement = Input.GetAxisRaw("Horizontal");
@@ -136,6 +140,9 @@ public class Player : MonoBehaviour
 
 	void FixedUpdate()
 	{
+		if (! isAlive)		/* nothing to do */
+			return;
+
 		jumping ();
 		moveCharacter ();
 	}
