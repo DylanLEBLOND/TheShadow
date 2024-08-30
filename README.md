@@ -4,8 +4,9 @@ The Shadow est une démo technique d'un action-platesformer dans lequel le
 joueur a une ombre qui réplique toutes ses actions avec 0.75 secondes de delai.
 
 Cette ombre est intangible de base mais peut, sous impulsion du joueur devenir
-tangible et donc interagir avec les éléments du monde (le joueur pouvant à tout
-moment la rendre de nouveau intangible en rappuyant sur la même touche).
+tangible et donc interagir avec les éléments du monde (le joueur pouvant la
+rendre de nouveau intangible en rappuyant sur la même touche après un petit
+delai).
 
 Attention cependant, une fois tangible, entrer au contact de l’ombre tue le
 joueur.
