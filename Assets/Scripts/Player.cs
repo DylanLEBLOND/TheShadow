@@ -128,7 +128,7 @@ public class Player : MonoBehaviour
 			if (superJump && ! _superJumpUsed)
 				_jump = true;
 		}
-		if (Input.GetButtonDown ("Tangible"))
+		if (Input.GetButtonDown ("Tangible") || Input.GetAxisRaw ("Tangible") != 0)
 		{
 			if (Time.time - lastTangibleTriggering >= Shadow.ShadowTangibleDelay)
 			{

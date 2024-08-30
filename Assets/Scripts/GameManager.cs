@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour
 			this.EndGameUIs.transform.GetChild(0).GetChild(0).GetChild(0).gameObject.SetActive(false);
 			this.EndGameUIs.transform.GetChild(0).GetChild(0).GetChild(1).gameObject.SetActive(true);
 		}
+		EventSystem.current.SetSelectedGameObject(null);
+		EventSystem.current.SetSelectedGameObject(this.EndGameUIs.transform.GetChild(0).GetChild(0).GetChild(2).gameObject);
 	}
 
 	void Update()
